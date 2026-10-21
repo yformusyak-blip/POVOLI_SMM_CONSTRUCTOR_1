@@ -48,7 +48,7 @@ export default function App() {
     if (!container) return;
 
     const updateScale = () => {
-      const { width, height } = container.getBoundingClientRect();
+      const { width, height } = (container as any).getBoundingClientRect();
       const scaleWidth = (width - 80) / canvasW;
       const scaleHeight = (height - 80) / canvasH;
       setScale(Math.min(scaleWidth, scaleHeight, 1));
